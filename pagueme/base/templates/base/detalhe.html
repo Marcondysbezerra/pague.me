@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+
+{% block title %}Editar Usuário{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Detalhes do Usuário</h3>
+              <hr>
+              <form>
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="email" class="form-control" id="nome" aria-describedby="nome-do-usuario">
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="email" aria-describedby="nome-do-usuario">
+                </div>
+                <div class="mb-3">
+                  <label for="telefone" class="form-label">Telefone</label>
+                  <input type="number" class="form-control" id="telefone" aria-describedby="telefone-do-usuario">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger">Submit</button>
+              </form>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
