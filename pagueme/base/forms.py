@@ -1,8 +1,8 @@
-from django import forms
+from django.forms import ModelForm
 from .models import Usuario
 
 
-class CriarUsuario(forms.ModelForm):
+class CriarUsuarioForm(ModelForm):
 
     class Meta:
         model = Usuario

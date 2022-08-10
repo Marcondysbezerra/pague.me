@@ -7,26 +7,33 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3>Detalhes do Usuário</h3>
+                <h3 class="mt-3">Detalhes do Usuário</h3>
               <hr>
-              <form>
-                <div class="mb-3">
-                  <label for="nome" class="form-label">Nome</label>
-                  <input type="email" class="form-control" id="nome" aria-describedby="nome-do-usuario">
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="email" aria-describedby="nome-do-usuario">
-                </div>
-                <div class="mb-3">
-                  <label for="telefone" class="form-label">Telefone</label>
-                  <input type="number" class="form-control" id="telefone" aria-describedby="telefone-do-usuario">
-                </div>
+                <form method="post" action="/create/" name="form" id="form">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <div class="form-group" id="nome">{{db.nome}}</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="form-group" id="email">{{db.email}}</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <div class="form-group" id="telefone">{{db.telefone}}</div>
+                    </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <button type="submit" class="btn btn-danger">Submit</button>
+                <a href="/edit/{{db.id}}/" type="submit" class="btn btn-success">Editar</a>
+                <a href="/delete/{{db.id}}/" type="submit" class="btn btn-danger btnDel">Deletar</a>
               </form>
             </div>
         </div>
     </div>
+
+    {% load static %}
+    <!-- Js do Delete
+    <script src="{% static 'js/javascript.js' %}"t></script>
+    -->
+
 {% endblock body %}
